@@ -1,0 +1,508 @@
+# depslib dependency file v1.0
+1558054883 source:c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1558044567 c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\utn.h
+
+1558054883 c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\instrumentos.h
+
+1558044567 source:c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558055626 source:c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+
+1558055673 source:c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\musicos.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1558055506 c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1558055458 source:c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1558054756 c:\users\alumno\desktop\parcial2019_fpenaranda\parcial2019_fpenaranda\orquestas.h
+
+1558213400 source:c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1558201397 c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\utn.h
+
+1558212776 c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\instrumentos.h
+
+1558224169 source:c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+
+1558224099 c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1558222438 c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\orquestas.h
+
+1558285495 source:c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1558224208 source:c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1558201397 source:c:\users\franor srl\desktop\parcialorquesta\primerparcial2019-master\parcial2019_fpenaranda\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558319542 source:c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1558403446 c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\utn.h
+
+1558318455 c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\instrumentos.h
+
+1558320195 source:c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1558319436 c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1558222438 c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\orquestas.h
+
+1558320195 source:c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1558201397 source:c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558306890 source:c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1558319092 source:c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1558305248 c:\users\franor srl\desktop\parcialorquestaconinfromes\parcial2019_fpenaranda\informes.h
+
+1558464039 source:c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1558464039 c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\utn.h
+
+1558464039 c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\instrumentos.h
+
+1558464039 source:c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1558464039 c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1558464039 c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\orquestas.h
+
+1558464039 source:c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1558464039 source:c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558469220 source:c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1558468064 c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\informes.h
+
+1558467899 source:c:\users\fpenaranda\desktop\florutn\pacialorqeustas2019\parciaorquestas2019\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1558482949 source:c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1558477275 c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\utn.h
+
+1558477275 c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\instrumentos.h
+
+1558477275 c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1558477275 c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\orquestas.h
+
+1558482869 c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\informes.h
+
+1558477275 source:c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1558483488 source:c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1558477275 source:c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1558477275 source:c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1558477275 source:c:\users\alumno\desktop\parcial2019\parciaorquestas2019\parciaorquestas2019\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1559172903 source:c:\users\franor srl\desktop\parcial2019\parcial2019\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559172329 c:\users\franor srl\desktop\parcial2019\parcial2019\utn.h
+
+1559144865 c:\users\franor srl\desktop\parcial2019\parcial2019\instrumentos.h
+
+1559144865 c:\users\franor srl\desktop\parcial2019\parcial2019\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1559144865 c:\users\franor srl\desktop\parcial2019\parcial2019\orquestas.h
+
+1559172896 c:\users\franor srl\desktop\parcial2019\parcial2019\informes.h
+
+1559144865 source:c:\users\franor srl\desktop\parcial2019\parcial2019\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1559177962 source:c:\users\franor srl\desktop\parcial2019\parcial2019\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559144865 source:c:\users\franor srl\desktop\parcial2019\parcial2019\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1559144865 source:c:\users\franor srl\desktop\parcial2019\parcial2019\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1559172329 source:c:\users\franor srl\desktop\parcial2019\parcial2019\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1559222521 source:c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1559222520 c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\utn.h
+
+1559222521 c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\instrumentos.h
+
+1559222520 source:c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559222520 c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1559222520 c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\orquestas.h
+
+1559222520 c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\informes.h
+
+1559222521 source:c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1559222520 source:c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1559222520 source:c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1559247165 source:c:\users\fpenaranda\desktop\florutn\parcial2019 29.05.2019\parcial2019 29.05.2019\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559252338 source:c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559252337 c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\utn.h
+
+1559252338 c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\instrumentos.h
+
+1559252338 c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1559252338 c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\orquestas.h
+
+1559252338 c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\informes.h
+
+1559252338 source:c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1559252338 source:c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559252338 source:c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1559252338 source:c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1559252337 source:c:\users\alumno\downloads\parcial2019\parcial2019 29.05.2019\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
