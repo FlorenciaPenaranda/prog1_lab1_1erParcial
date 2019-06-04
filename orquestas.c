@@ -24,10 +24,13 @@ static int generarId(void)
 int orq_InicializarArray(Orquestas* oOrquestas, int limite)
 {
     int ret;
-    for (int i=0; i<limite; i++)
+    if(oOrquestas != NULL && limite >0)
+    {
+     for (int i=0; i<limite; i++)
     {
         oOrquestas[i].isEmpty=1;
         ret=0;
+    }
     }
     return ret;
 }
@@ -42,6 +45,9 @@ int orq_InicializarArray(Orquestas* oOrquestas, int limite)
 int orq_buscarLibre(Orquestas* oOrquestas, int limite, int* devuelve)
 {
     int ret;
+
+    if(oOrquestas != NULL && limite >0)
+    {
     for (int i=0; i<limite; i++)
     {
         if (oOrquestas[i].isEmpty==1)
@@ -51,6 +57,7 @@ int orq_buscarLibre(Orquestas* oOrquestas, int limite, int* devuelve)
             break;
         }
         ret=1;
+    }
     }
     return ret;
 }
@@ -62,10 +69,12 @@ int orq_buscarLibre(Orquestas* oOrquestas, int limite, int* devuelve)
 * \return int Return (-1) si Error  - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int orq_altaOrquestas(Orquestas* oOrquestas, int limiteOrquestas, int posLibre)
+int orq_altaOrquestas(Orquestas* oOrquestas, int limite, int posLibre)
 {
     int ret=-1;
 
+    if(oOrquestas != NULL && limite >0)
+    {
     if (!getString(oOrquestas[posLibre].nombre,"Ingrese nombre: ","error, vuelva a ingresar\n\n",1,60,2) &&
             !getString(oOrquestas[posLibre].lugar,"Ingrese lugar: ","error, vuelva a ingresar\n\n",1,30,2) &&
             !getInt(&oOrquestas[posLibre].tipo, "tipo: ","error, vuelva a ingresar\n\n",1,3,2))
@@ -80,7 +89,7 @@ int orq_altaOrquestas(Orquestas* oOrquestas, int limiteOrquestas, int posLibre)
     {
         ret=1;
     }
-
+    }
     return ret;
 }
 
@@ -90,9 +99,11 @@ int orq_altaOrquestas(Orquestas* oOrquestas, int limiteOrquestas, int posLibre)
 * \return void
 *
 */
-void orq_mostrarArray(Orquestas* oOrquestas, int limiteOrquestas)
+void orq_mostrarArray(Orquestas* oOrquestas, int limite)
 {
-    for (int i=0; i<limiteOrquestas; i++)
+    if(oOrquestas != NULL && limite >0)
+    {
+    for (int i=0; i<limite; i++)
     {
         if(oOrquestas[i].isEmpty!=1)
         {
@@ -117,6 +128,7 @@ void orq_mostrarArray(Orquestas* oOrquestas, int limiteOrquestas)
         //printf("Press 'Enter' to continue: ... ");
         //while ( getchar() != '\n');
     }
+    }
 }
 
 /** \brief Pide al usuario un ID, lo busca en un array y devuelve la posicion en que se encuentra
@@ -131,6 +143,8 @@ int orq_buscarPosicionId(Orquestas* oOrquestas, int limite, int* orqleadoEncontr
     int ret=1;
     Orquestas auxOrquestas;
 
+    if(oOrquestas != NULL && limite >0)
+    {
     //orq_mostrarArray(oOrquestas, limite);
     if (getInt(&auxOrquestas.idOrquestas,"\nIngrese el ID de la orquesta: ","Error en el ID ingresado",0,20,3)==0)
     {
@@ -147,6 +161,7 @@ int orq_buscarPosicionId(Orquestas* oOrquestas, int limite, int* orqleadoEncontr
             }
         }
     }
+    }
     return ret;
 }
 
@@ -161,6 +176,9 @@ int orq_buscarPorId (Orquestas* oOrquestas, int limite, int idE)
 {
     int i;
     int ret=-1;
+
+    if(oOrquestas != NULL && limite >0)
+    {
     for(i=0; i<limite; i++)
     {
         if(oOrquestas[i].idOrquestas==idE)
@@ -168,6 +186,7 @@ int orq_buscarPorId (Orquestas* oOrquestas, int limite, int idE)
             ret=i;
             break;
         }
+    }
     }
     return ret;
 }
@@ -183,6 +202,9 @@ int orq_bajaOrquestas(Orquestas* oOrquestas, int limite, int* idBaja)
 {
     int posOrquestas;
     orq_mostrarArray(oOrquestas, limite);
+
+    if(oOrquestas != NULL && limite >0)
+    {
     switch (orq_buscarPosicionId(oOrquestas, limite,&posOrquestas))
     {
     case 0:
@@ -202,6 +224,7 @@ int orq_bajaOrquestas(Orquestas* oOrquestas, int limite, int* idBaja)
     default:
         printf("ingreso al if pero no encontro el nombre");
         break;
+    }
     }
     return 1;
 }

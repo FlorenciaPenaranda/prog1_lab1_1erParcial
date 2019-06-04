@@ -24,10 +24,13 @@ static int generarId(void)
 int ins_InicializarArray(Instrumentos* iInstrumentos, int limite)
 {
     int ret;
-    for (int i=0; i<limite; i++)
+    if(iInstrumentos != NULL && limite >0)
     {
-        iInstrumentos[i].isEmpty=1;
-        ret=0;
+        for (int i=0; i<limite; i++)
+        {
+            iInstrumentos[i].isEmpty=1;
+            ret=0;
+        }
     }
     return ret;
 }
@@ -42,15 +45,18 @@ int ins_InicializarArray(Instrumentos* iInstrumentos, int limite)
 int ins_buscarLibre(Instrumentos* iInstrumentos, int limite, int* devuelve)
 {
     int ret;
-    for (int i=0; i<limite; i++)
+    if(iInstrumentos != NULL && limite >0)
     {
-        if (iInstrumentos[i].isEmpty==1)
+        for (int i=0; i<limite; i++)
         {
-            *devuelve=i;
-            ret=0;
-            break;
+            if (iInstrumentos[i].isEmpty==1)
+            {
+                *devuelve=i;
+                ret=0;
+                break;
+            }
+            ret=-1;
         }
-        ret=-1;
     }
     return ret;
 }
@@ -66,19 +72,22 @@ int ins_altaInstrumentos(Instrumentos* iInstrumentos, int limite, int posLibre)
 {
     int ret=-1;
 
-    if (!getString(iInstrumentos[posLibre].nombre,"Ingrese un nombre: ","error, vuelva a ingresar\n\n",2,30,2))
+    if(iInstrumentos != NULL && limite >0)
     {
-        printf("\n1-cuerdas\n2-viento-madera\n3-viento-metal\n4-percusion\n\n");
-        if(!getInt(&iInstrumentos[posLibre].tipo,"Ingrese el tipo:","error, vuelva a intentar\n\n",0,3,2))
+        if (!getString(iInstrumentos[posLibre].nombre,"Ingrese un nombre: ","error, vuelva a ingresar\n\n",2,30,2))
         {
-            iInstrumentos[posLibre].idInstrumentos = generarId();
-            iInstrumentos[posLibre].isEmpty=0;
-            ret=0;
+            printf("\n1-cuerdas\n2-viento-madera\n3-viento-metal\n4-percusion\n\n");
+            if(!getInt(&iInstrumentos[posLibre].tipo,"Ingrese el tipo:","error, vuelva a intentar\n\n",0,3,2))
+            {
+                iInstrumentos[posLibre].idInstrumentos = generarId();
+                iInstrumentos[posLibre].isEmpty=0;
+                ret=0;
+            }
         }
-    }
-    else
-    {
-        ret=1;
+        else
+        {
+            ret=1;
+        }
     }
     return ret;
 }
@@ -91,35 +100,36 @@ int ins_altaInstrumentos(Instrumentos* iInstrumentos, int limite, int posLibre)
 */
 void ins_mostrarArray(Instrumentos* iInstrumentos, int limite)
 {
-
-
-    for (int i=0; i<limite; i++)
+    if(iInstrumentos != NULL && limite >0)
     {
-        if(iInstrumentos[i].isEmpty==0)
+        for (int i=0; i<limite; i++)
         {
-            fflush(stdin);
-            printf("\n\n-ID del instrumento : %d\n", iInstrumentos[i].idInstrumentos);
-            printf("Nombre: %s\n", iInstrumentos[i].nombre);
-            if(iInstrumentos[i].tipo ==1)
+            if(iInstrumentos[i].isEmpty==0)
             {
-                printf("tipo: cuerdas");
-            }
-            if(iInstrumentos[i].tipo ==2)
-            {
-                printf("tipo: viento-madera");
-            }
-            if(iInstrumentos[i].tipo ==3)
-            {
-                printf("tipo: viento-metal");
-            }
-            if(iInstrumentos[i].tipo ==4)
-            {
-                printf("tipo: percusion");
-            }
+                fflush(stdin);
+                printf("\n\n-ID del instrumento : %d\n", iInstrumentos[i].idInstrumentos);
+                printf("Nombre: %s\n", iInstrumentos[i].nombre);
+                if(iInstrumentos[i].tipo ==1)
+                {
+                    printf("tipo: cuerdas");
+                }
+                if(iInstrumentos[i].tipo ==2)
+                {
+                    printf("tipo: viento-madera");
+                }
+                if(iInstrumentos[i].tipo ==3)
+                {
+                    printf("tipo: viento-metal");
+                }
+                if(iInstrumentos[i].tipo ==4)
+                {
+                    printf("tipo: percusion");
+                }
 
+            }
+            //printf("Press 'Enter' to continue: ... ");
+            //while ( getchar() != '\n');
         }
-        //printf("Press 'Enter' to continue: ... ");
-        //while ( getchar() != '\n');
     }
 }
 
@@ -135,18 +145,20 @@ int ins_buscarPosicionId(Instrumentos* iInstrumentos, int limite, int* insEncont
     int ret=1;
     Instrumentos auxInstrumentos;
 
-
-    if (getInt(&auxInstrumentos.idInstrumentos,"ingrese el ID del instrumento: ","Vuelva a ingresar",0,20,3)==0)
+    if(iInstrumentos != NULL && limite >0)
     {
-        //auxInstrumentoss.nombre=tolower(auxInstrumentoss.nombre);
-        ret=-1;
-        for(int i=0; i<limite; i++)
+        if (getInt(&auxInstrumentos.idInstrumentos,"ingrese el ID del instrumento: ","Vuelva a ingresar",0,20,3)==0)
         {
-            if (iInstrumentos[i].idInstrumentos == auxInstrumentos.idInstrumentos)
+            //auxInstrumentoss.nombre=tolower(auxInstrumentoss.nombre);
+            ret=-1;
+            for(int i=0; i<limite; i++)
             {
-                *insEncontrado=i;
-                ret=0;
-                break;
+                if (iInstrumentos[i].idInstrumentos == auxInstrumentos.idInstrumentos)
+                {
+                    *insEncontrado=i;
+                    ret=0;
+                    break;
+                }
             }
         }
     }
@@ -164,12 +176,16 @@ int ins_buscarPorId (Instrumentos* iInstrumentos, int limite, int idE)
 {
     int i;
     int ret=-1;
-    for(i=0; i<limite; i++)
+
+    if(iInstrumentos!= NULL && limite >0)
     {
-        if(iInstrumentos[i].idInstrumentos==idE)
+        for(i=0; i<limite; i++)
         {
-            ret=i;
-            break;
+            if(iInstrumentos[i].idInstrumentos==idE)
+            {
+                ret=i;
+                break;
+            }
         }
     }
     return ret;
@@ -183,32 +199,35 @@ int ins_buscarPorId (Instrumentos* iInstrumentos, int limite, int idE)
 */
 void ins_mostrarTipoInstrumento(Instrumentos* iInstrumentos, int limite)
 {
-    for (int i=0; i<limite; i++)
+    if(iInstrumentos!= NULL && limite >0)
     {
-        if(iInstrumentos[i].isEmpty==0)
+        for (int i=0; i<limite; i++)
         {
-            fflush(stdin);
-            printf("\n\n-ID del instrumento : %d\n", iInstrumentos[i].idInstrumentos);
-            printf("Nombre: %s\n", iInstrumentos[i].nombre);
-            if(iInstrumentos[i].tipo ==1)
+            if(iInstrumentos[i].isEmpty==0)
             {
-                printf("tipo: cuerdas\n");
-            }
-            if(iInstrumentos[i].tipo ==2)
-            {
-                printf("tipo: viento-madera\n");
-            }
-            if(iInstrumentos[i].tipo ==3)
-            {
-                printf("tipo: viento-metal\n");
-            }
-            if(iInstrumentos[i].tipo ==4)
-            {
-                printf("tipo: percusion\n");
-            }
+                fflush(stdin);
+                printf("\n\n-ID del instrumento : %d\n", iInstrumentos[i].idInstrumentos);
+                printf("Nombre: %s\n", iInstrumentos[i].nombre);
+                if(iInstrumentos[i].tipo ==1)
+                {
+                    printf("tipo: cuerdas\n");
+                }
+                if(iInstrumentos[i].tipo ==2)
+                {
+                    printf("tipo: viento-madera\n");
+                }
+                if(iInstrumentos[i].tipo ==3)
+                {
+                    printf("tipo: viento-metal\n");
+                }
+                if(iInstrumentos[i].tipo ==4)
+                {
+                    printf("tipo: percusion\n");
+                }
 
+            }
+            //printf("Press 'Enter' to continue: ... ");
+            //while ( getchar() != '\n');
         }
-        //printf("Press 'Enter' to continue: ... ");
-        //while ( getchar() != '\n');
     }
 }

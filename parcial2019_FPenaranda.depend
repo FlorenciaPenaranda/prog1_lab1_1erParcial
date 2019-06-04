@@ -506,3 +506,70 @@
 	<ctype.h>
 	"utn.h"
 
+1559662555 source:c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\instrumentos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+
+1559660433 c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\utn.h
+
+1559660433 c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\instrumentos.h
+
+1559660433 source:c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+
+1559660433 c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\musicos.h
+	"instrumentos.h"
+	"orquestas.h"
+
+1559660433 c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\orquestas.h
+
+1559660433 c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\informes.h
+
+1559663916 source:c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\musicos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"musicos.h"
+	"instrumentos.h"
+	"orquestas.h"
+
+1559660433 source:c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\orquestas.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+	"orquestas.h"
+	"musicos.h"
+
+1559660433 source:c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1559661517 source:c:\users\fpenaranda\desktop\florutn\prog1_lab1_1erparcial\informes.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"instrumentos.h"
+	"musicos.h"
+	"orquestas.h"
+	"informes.h"
+

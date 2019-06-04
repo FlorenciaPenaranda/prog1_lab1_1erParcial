@@ -16,6 +16,7 @@ int buscarLibre (char lista[][56], int* pIndex, int cantidadPos)
 {
     int i;
     int ret=-1;
+
     for(i=0; i<cantidadPos; i++)
     {
         printf("%s\n",lista[i]);

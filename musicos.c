@@ -26,10 +26,13 @@ static int generarId(void)
 int mus_InicializarArray(Musicos* mMusicos, int limite)
 {
     int ret;
-    for (int i=0; i<limite; i++)
+    if(mMusicos != NULL && limite >0)
     {
-        mMusicos[i].isEmpty=1;
-        ret=0;
+        for (int i=0; i<limite; i++)
+        {
+            mMusicos[i].isEmpty=1;
+            ret=0;
+        }
     }
     return ret;
 }
@@ -44,15 +47,18 @@ int mus_InicializarArray(Musicos* mMusicos, int limite)
 int mus_buscarLibre(Musicos* mMusicos, int limite, int* devuelve)
 {
     int ret;
-    for (int i=0; i<limite; i++)
+    if(mMusicos != NULL && limite >0)
     {
-        if (mMusicos[i].isEmpty==1)
+        for (int i=0; i<limite; i++)
         {
-            *devuelve=i;
-            ret=0;
-            break;
+            if (mMusicos[i].isEmpty==1)
+            {
+                *devuelve=i;
+                ret=0;
+                break;
+            }
+            ret=1;
         }
-        ret=1;
     }
     return ret;
 }
@@ -74,38 +80,41 @@ int mus_altaMusicos(Musicos* mMusicos, Orquestas* oOrquestas, Instrumentos* iIns
     int bufferIdInstrumento;
     int bufferIdOrquesta;
 
-    if (!getString(mMusicos[posLibre].nombre,"Ingrese nombre: ","error, vuelva a ingresar\n\n",1,30,2) &&
-            !getString(mMusicos[posLibre].apellido,"Ingrese apellido: ","error, vuelva a ingresar\n\n",1,30,2) &&
-            !getInt(&mMusicos[posLibre].edad, "Ingrese edad:", "Error, vuelva a ingresar", 15,105,2)
-       )
+    if(mMusicos != NULL && oOrquestas!= NULL && iInstrumentos!= NULL && limiteMusicos>0 && limiteOrquestas>0 && limiteInstrumentos>0)
     {
-        printf("\n\n");
-        orq_mostrarArray(oOrquestas, limiteOrquestas);
-        printf("\n\n");
-        if(!getInt(&bufferIdOrquesta, "Ingrese ID Orquesta:", "Error, vuelva a ingresar", 0,50,2 ))
+        if (!getString(mMusicos[posLibre].nombre,"Ingrese nombre: ","error, vuelva a ingresar\n\n",1,30,2) &&
+                !getString(mMusicos[posLibre].apellido,"Ingrese apellido: ","error, vuelva a ingresar\n\n",1,30,2) &&
+                !getInt(&mMusicos[posLibre].edad, "Ingrese edad:", "Error, vuelva a ingresar", 15,105,2)
+           )
         {
-            if(orq_buscarPorId(oOrquestas, limiteOrquestas, bufferIdOrquesta))
+            printf("\n\n");
+            orq_mostrarArray(oOrquestas, limiteOrquestas);
+            printf("\n\n");
+            if(!getInt(&bufferIdOrquesta, "Ingrese ID Orquesta:", "Error, vuelva a ingresar", 0,50,2 ))
             {
-                mMusicos[posLibre].idOrqesta = bufferIdOrquesta;
+                if(orq_buscarPorId(oOrquestas, limiteOrquestas, bufferIdOrquesta))
+                {
+                    mMusicos[posLibre].idOrqesta = bufferIdOrquesta;
+                }
             }
+            printf("\n\n");
+            ins_mostrarArray(iInstrumentos, limiteInstrumentos);
+            printf("\n\n");
+            if(!getInt(&bufferIdInstrumento, "Ingrese ID instrumento:", "Error, vuelva a ingresar", 0,20,2 ))
+            {
+                if(ins_buscarPorId(iInstrumentos, limiteInstrumentos, bufferIdInstrumento))
+                {
+                    mMusicos[posLibre].idInstrumento = bufferIdInstrumento;
+                }
+            }
+            mMusicos[posLibre].idMusicos = generarId();
+            mMusicos[posLibre].isEmpty=0;
+            ret=0;
         }
-        printf("\n\n");
-        ins_mostrarArray(iInstrumentos, limiteInstrumentos);
-        printf("\n\n");
-        if(!getInt(&bufferIdInstrumento, "Ingrese ID instrumento:", "Error, vuelva a ingresar", 0,20,2 ))
+        else
         {
-            if(ins_buscarPorId(iInstrumentos, limiteInstrumentos, bufferIdInstrumento))
-            {
-                mMusicos[posLibre].idInstrumento = bufferIdInstrumento;
-            }
+            ret=1;
         }
-        mMusicos[posLibre].idMusicos = generarId();
-        mMusicos[posLibre].isEmpty=0;
-        ret=0;
-    }
-    else
-    {
-        ret=1;
     }
     return ret;
 }
@@ -121,15 +130,14 @@ int mus_altaMusicos(Musicos* mMusicos, Orquestas* oOrquestas, Instrumentos* iIns
 * \return int Return (-1) si Error  - (0) si se modifica el elemento exitosamente
 *
 */
-int mus_modificar(Musicos* mMusicos, Orquestas* oOrquestas, Instrumentos* iInstrumentos, int limiteMusicos, int limiteInstrumentos, int limiteOrquesta,int intentos)
+int mus_modificar(Musicos* mMusicos, Orquestas* oOrquestas, Instrumentos* iInstrumentos, int limiteMusicos, int limiteInstrumentos, int limiteOrquestas,int intentos)
 {
     int ret=-1;
     int auxId;
     int posIdEnc;
     int opcion;
 
-
-    if(mMusicos!=NULL && limiteMusicos>0)
+    if(mMusicos != NULL && oOrquestas!= NULL && iInstrumentos!= NULL && limiteMusicos>0 && limiteOrquestas>0 && limiteInstrumentos>0)
     {
         mus_mostrarElementosArray(mMusicos, limiteMusicos);
         mus_buscarPosicionId(mMusicos, limiteMusicos, &posIdEnc);
@@ -163,7 +171,7 @@ int mus_modificar(Musicos* mMusicos, Orquestas* oOrquestas, Instrumentos* iInstr
                     break;
                 }
             case 2:
-                orq_mostrarArray(oOrquestas, limiteOrquesta);
+                orq_mostrarArray(oOrquestas, limiteOrquestas);
                 if(!getInt(&mMusicos[posIdEnc].idOrqesta, "\nIngrese ID de orquesta: ", "error, vuelva a intentar\n\n",0,3,2))
                 {
                     ret = 0;
@@ -199,40 +207,42 @@ void mus_mostrarArray(Musicos* mMusicos,Instrumentos* iInstrumentos, int limiteI
 {
     int auxPos;
 
-
-    for (int i=0; i<limiteMusicos; i++)
+    if(mMusicos != NULL && iInstrumentos!= NULL && limiteMusicos>0 && limiteInstrumentos>0)
     {
-        if(mMusicos[i].isEmpty!=1)
+        for (int i=0; i<limiteMusicos; i++)
         {
-            fflush(stdin);
-            printf("\n-ID del musico : %d\n", mMusicos[i].idMusicos);
-            printf("Nombre: %s\n", mMusicos[i].nombre);
-            printf("Apellido: %s\n", mMusicos[i].apellido);
-
-            auxPos = ins_buscarPorId(iInstrumentos, limiteInstrumentos, mMusicos[i].idInstrumento);
-
-            switch (iInstrumentos[auxPos].tipo)
+            if(mMusicos[i].isEmpty!=1)
             {
-            case 1:
-                printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
-                printf("Tipo: cuerdas\n");
-                break;
-            case 2:
-                printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
-                printf("Tipo: viento-madera\n");
-                break;
-            case 3:
-                printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
-                printf("Tipo: viento-metal\n");
-                break;
-            case 4:
-                printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
-                printf("Tipo: percusion\n");
-                break;
+                fflush(stdin);
+                printf("\n-ID del musico : %d\n", mMusicos[i].idMusicos);
+                printf("Nombre: %s\n", mMusicos[i].nombre);
+                printf("Apellido: %s\n", mMusicos[i].apellido);
+
+                auxPos = ins_buscarPorId(iInstrumentos, limiteInstrumentos, mMusicos[i].idInstrumento);
+
+                switch (iInstrumentos[auxPos].tipo)
+                {
+                case 1:
+                    printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
+                    printf("Tipo: cuerdas\n");
+                    break;
+                case 2:
+                    printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
+                    printf("Tipo: viento-madera\n");
+                    break;
+                case 3:
+                    printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
+                    printf("Tipo: viento-metal\n");
+                    break;
+                case 4:
+                    printf("Nombre del instrumento: %s\n", iInstrumentos[auxPos].nombre);
+                    printf("Tipo: percusion\n");
+                    break;
+                }
             }
+            //printf("Press 'Enter' to continue: ... ");
+            //while ( getchar() != '\n');
         }
-        //printf("Press 'Enter' to continue: ... ");
-        //while ( getchar() != '\n');
     }
 }
 
@@ -244,7 +254,9 @@ void mus_mostrarArray(Musicos* mMusicos,Instrumentos* iInstrumentos, int limiteI
 */
 void mus_mostrarElementosArray(Musicos* mMusicos, int limiteMusicos)
 {
-    for (int i=0; i<limiteMusicos; i++)
+    if(mMusicos != NULL && limiteMusicos>0)
+    {
+     for (int i=0; i<limiteMusicos; i++)
     {
         if(mMusicos[i].isEmpty!=1)
         {
@@ -256,6 +268,7 @@ void mus_mostrarElementosArray(Musicos* mMusicos, int limiteMusicos)
         }
         //printf("Press 'Enter' to continue: ... ");
         //while ( getchar() != '\n');
+    }
     }
 }
 
@@ -271,8 +284,9 @@ int mus_buscarPosicionId(Musicos* mMusicos, int limite, int* musicoEncontrado)
     int ret=1;
     Musicos auxMusicos;
 
-
-    if (getInt(&auxMusicos.idMusicos,"\nIngrese el codigo del musico: ","Error en el codigo del musro ingresado",0,20,3)==0)
+    if(mMusicos != NULL && limite >0)
+    {
+     if (getInt(&auxMusicos.idMusicos,"\nIngrese el codigo del musico: ","Error en el codigo del musro ingresado",0,20,3)==0)
     {
         ret=-1;
         for(int i=0; i<limite; i++)
@@ -284,6 +298,7 @@ int mus_buscarPosicionId(Musicos* mMusicos, int limite, int* musicoEncontrado)
                 break;
             }
         }
+    }
     }
     return ret;
 }
@@ -298,13 +313,17 @@ int mus_buscarPosicionId(Musicos* mMusicos, int limite, int* musicoEncontrado)
 int mus_buscarPorId (Musicos* mMusicos, int limite, int idE)
 {
     int ret=-1;
-    for(int i=0; i<limite; i++)
+
+    if(mMusicos != NULL && limite >0)
+    {
+     for(int i=0; i<limite; i++)
     {
         if(mMusicos[i].idMusicos==idE)
         {
             ret=i;
             break;
         }
+    }
     }
     return ret;
 }
@@ -319,6 +338,9 @@ int mus_bajaMusicos(Musicos* mMusicos, int limite)
 {
     int posMusicos;
     mus_mostrarElementosArray(mMusicos, limite);
+
+    if(mMusicos != NULL && limite >0)
+    {
     switch (mus_buscarPosicionId(mMusicos, limite,&posMusicos))
     {
     case 0:
@@ -338,6 +360,7 @@ int mus_bajaMusicos(Musicos* mMusicos, int limite)
         printf("ingreso al if pero no encontro el nombre");
         break;
     }
+    }
     return 1;
 }
 
@@ -351,6 +374,9 @@ int mus_bajaMusicos(Musicos* mMusicos, int limite)
 int mus_bajaMusicosId(Musicos* mMusicos, int limite, int idOrquesta)
 {
     int ret=-1;
+
+    if(mMusicos != NULL && limite >0)
+    {
     for(int i=0; i<limite; i++)
     {
         if(mMusicos[i].idOrqesta== idOrquesta)
@@ -359,6 +385,7 @@ int mus_bajaMusicosId(Musicos* mMusicos, int limite, int idOrquesta)
             ret=0;
             break;
         }
+    }
     }
     return ret;
 }
